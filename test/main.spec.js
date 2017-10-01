@@ -1,7 +1,9 @@
+'use strict';
+
 // Libraries
 const fs = require('fs');
 const jsdom = require('jsdom');
-const { assert } = require('chai');
+const assert = require('chai').assert;
 const sinon = require('sinon');
 const srcScript = fs.readFileSync('./src/assets/main.js', 'utf8');
 
@@ -38,9 +40,9 @@ describe('CodeBreaker :', () => {
       const scriptEl = window.document.createElement('script');
       scriptEl.appendChild(window.document.createTextNode(srcScript));
       window.document.body.appendChild(scriptEl);
-      setTimeout(()=> {
+      //setTimeout(()=> {
         done();
-      }, 2000)
+      //}, 2000)
     });
   });
 
